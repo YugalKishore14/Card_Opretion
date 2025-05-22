@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import './allCss/Login.css'
 
 const RegisterPage = () => {
     const [user, setUser] = useState({
@@ -27,7 +28,7 @@ const RegisterPage = () => {
             <section>
                 <main>
                     <div className="section-registration">
-                        <div className="container grid grid-two-cols"></div>
+                        {/* <div className="container grid grid-two-cols"></div> */}
                         <div className="registration-image">
                             <img src="/images/register.png"
                                 alt="a girl is trying to do registration" width={500} height={500} />
