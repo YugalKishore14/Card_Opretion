@@ -15,7 +15,7 @@ const Navebar = () => {
             <header>
                 <div className="container">
                     <div className="logo-brand">
-                        <NavLink to='/' onClick={closeMenu}>yugal Kishore</NavLink>
+                        <NavLink to='/' onClick={closeMenu}>Yugal Technical</NavLink>
                     </div>
 
                     <div className="hamburger" onClick={toggleMenu}>

@@ -28,7 +28,7 @@ const LoginPage = () => {
             <section>
                 <main>
                     <div className="section-registration">
-                        {/* <div className="container grid grid-two-cols"></div> */}
+                        <div className="container grid grid-two-cols"></div>
                         <div className="registration-image">
                             <img src="/images/login.png"
                                 alt="let's fill the login form" width={500} height={500} />
