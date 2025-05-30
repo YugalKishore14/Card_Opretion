@@ -6,6 +6,7 @@ import ServicePage from './pages/ServicePage'
 import RegisterPage from './pages/RegisterPage'
 import LoginPage from './pages/LoginPage'
 import Navebar from './components/Navebar'
+import Footer from './components/Footer'
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
           <Route path='registerpage' element={<RegisterPage />} />
           <Route path='loginpage' element={<LoginPage />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
     </>
   )

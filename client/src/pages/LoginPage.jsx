@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import './allCss/Login.css'
 
 const LoginPage = () => {
@@ -63,7 +63,7 @@ const LoginPage = () => {
                                     />
                                 </div>
                                 <br />
-                                <button type='submit' className='btn btn-submit'>Register Now</button>
+                                <button type='submit' className='btn btn-submit'>Login Now</button>
                             </form>
                         </div>
                     </div>
