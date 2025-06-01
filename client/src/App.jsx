@@ -5,6 +5,7 @@ import ContactPage from './pages/ContactPage'
 import ServicePage from './pages/ServicePage'
 import RegisterPage from './pages/RegisterPage'
 import LoginPage from './pages/LoginPage'
+import ErrorPage from './pages/ErrorPage'
 import Navebar from './components/Navebar'
 import Footer from './components/Footer'
 
@@ -20,6 +21,7 @@ const App = () => {
           <Route path='servicepage' element={<ServicePage />} />
           <Route path='registerpage' element={<RegisterPage />} />
           <Route path='loginpage' element={<LoginPage />} />
+          <Route path='*' element={<ErrorPage />} />
         </Routes>
         <Footer />
       </BrowserRouter>
