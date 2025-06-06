@@ -18,9 +18,18 @@ const RegisterPage = () => {
         });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         alert(user);
+        const response = await fetch("http://localhost:4000/api/auth/register", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(user)
+        })
+        console.log(response);
+
     }
 
     return (
