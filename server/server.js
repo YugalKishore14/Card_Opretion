@@ -9,8 +9,8 @@ const connectDB = require('./utils/db');
 const errorMiddlewares = require('./middlewares/error-middlewares');
 
 
-app.use('/auth', authRouter);
-app.use('/form', contactRouter)
+app.use('/api/auth', authRouter);
+app.use('/api/form', contactRouter)
 
 app.use(errorMiddlewares)
 
