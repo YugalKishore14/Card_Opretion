@@ -20,7 +20,7 @@ const RegisterPage = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        alert(user);
+        alert("Registration successful!");
         const response = await fetch("http://localhost:4000/api/auth/register", {
             method: "POST",
             headers: {
@@ -28,8 +28,16 @@ const RegisterPage = () => {
             },
             body: JSON.stringify(user)
         })
-        console.log(response);
 
+        if (response.ok) {
+            setUser({
+                username: '',
+                email: '',
+                phone: '',
+                password: ''
+            });
+        }
+        // console.log(response);
     }
 
     return (
