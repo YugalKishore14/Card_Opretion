@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
-import './allCss/Login.css'
+import { useNavigate } from 'react-router-dom';
+import './allCss/Login.css';
+import { useAuth } from '../store/auth';
 
 const RegisterPage = () => {
     const [user, setUser] = useState({
@@ -8,6 +10,8 @@ const RegisterPage = () => {
         phone: '',
         password: ''
     });
+    const navigate = useNavigate();
+    const { storeTokenInLS } = useAuth();
     const handleInput = (e) => {
         const name = e.target.name;
         const value = e.target.value;
@@ -30,14 +34,17 @@ const RegisterPage = () => {
         })
 
         if (response.ok) {
+            const data = await response.json();
+            console.log("hello", data); //
+            storeTokenInLS(data.token);
             setUser({
                 username: '',
                 email: '',
                 phone: '',
                 password: ''
             });
+            navigate('/loginpage');
         }
-        // console.log(response);
     }
 
     return (
