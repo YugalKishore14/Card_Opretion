@@ -8,6 +8,7 @@ import LoginPage from './pages/LoginPage'
 import ErrorPage from './pages/ErrorPage'
 import Navebar from './components/Navebar'
 import Footer from './components/Footer'
+import LogoutPage from './pages/LogoutPage'
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
           <Route path='servicepage' element={<ServicePage />} />
           <Route path='registerpage' element={<RegisterPage />} />
           <Route path='loginpage' element={<LoginPage />} />
+          <Route path='logout' element={<LogoutPage />} />
           <Route path='*' element={<ErrorPage />} />
         </Routes>
         <Footer />

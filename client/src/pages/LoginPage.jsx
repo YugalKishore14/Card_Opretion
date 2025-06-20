@@ -37,7 +37,7 @@ const LoginPage = () => {
             })
             if (response.ok) {
                 const data = await response.json();
-                console.log("hello", data); //
+                // console.log("hello", data); //
                 storeTokenInLS(data.token);
                 alert("Login successful!");
                 setUser({
