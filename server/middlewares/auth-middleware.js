@@ -14,7 +14,7 @@ const authMiddleware = async (req, res, next) => {
         const userData = await User.findOne({ email: inVerefied.email }).select({
             password: 0,
         });
-        console.log("Token verified:", userData);
+        // console.log("Token verified:", userData);
         req.user = userData;
         req.token = jwtToken;
         req.userId = userData._id;
