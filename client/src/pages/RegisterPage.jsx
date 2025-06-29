@@ -35,7 +35,7 @@ const RegisterPage = () => {
 
         if (response.ok) {
             const data = await response.json();
-            console.log("hello", data); //
+            // console.log("hello", data); //
             storeTokenInLS(data.token);
             setUser({
                 username: '',
