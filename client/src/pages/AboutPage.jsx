@@ -1,13 +1,15 @@
 import { Link } from "react-router-dom";
 import "./allCss/AboutPage.css";
+import { useAuth } from "../store/auth";
 
 const AboutPage = () => {
+    const { user } = useAuth();
     return (
         <>
             <section className="section-hero section">
                 <div className="container grid grid-two-cols">
                     <div className="hero-content">
-                        <p>Welcome. Yugal Techncial </p>
+                        <p>Welcome {user.username}</p>
                         <h1>Why Choose Us?</h1>
                         <p>
                             Expertise: Our team consists of experienced IT professionals who are
