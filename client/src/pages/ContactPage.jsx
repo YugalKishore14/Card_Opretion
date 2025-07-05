@@ -2,12 +2,15 @@ import { useState } from "react";
 import "./allCss/ContactPage.css";
 import { useAuth } from "../store/auth";;
 
+
+const defaultContactFormData = {
+    email: "",
+    username: "",
+    message: "",
+};
+
 const ContactPage = () => {
-    const [user, setUser] = useState({
-        email: "",
-        username: "",
-        message: "",
-    });
+    const [user, setUser] = useState(defaultContactFormData);
     const [userData, setUserData] = useState(true);
     const { user: users } = useAuth();
     if (userData && users) {
@@ -29,10 +32,25 @@ const ContactPage = () => {
         });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        alert(user);
-        console.log(user);
+        // alert(user);
+
+        // console.log(user);
+        try {
+            const response = await fetch('http://localhost:4000/api/form/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(user),
+            })
+            if (response.ok) {
+                setUser(defaultContactFormData);
+            }
+        } catch (error) {
+            console.log(error);
+        }
     };
     return (
         <>
